@@ -1,0 +1,62 @@
+.detailedmovie {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr); /* Single column by default (mobile) */
+	gap: 20px; /* Smaller gap for mobile */
+	align-items: center;
+	margin-top: 20px;
+
+	&__image img {
+		width: 100%;
+		height: auto; /* Ensure the image scales properly */
+		object-fit: cover;
+	}
+
+	&__descr {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+
+		&-info {
+			margin-top: 5px;
+			display: flex;
+			align-items: center;
+			gap: 5px;
+
+			img {
+				width: 18px;
+			}
+
+			.dot {
+				width: 5px;
+				height: 5px;
+				border-radius: 100%;
+				background: red;
+			}
+		}
+	}
+}
+
+/* Media query for tablets (768px and above) */
+@media (min-width: 768px) {
+	.detailedmovie {
+		grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
+		gap: 30px; /* Slightly larger gap for tablets */
+	}
+}
+
+/* Media query for small desktops (1024px and above) */
+@media (min-width: 1024px) {
+	.detailedmovie {
+		grid-template-columns: 30% 30%; /* Two columns with fixed widths */
+		gap: 50px; /* Larger gap for desktops */
+		justify-content: center; /* Center the grid items */
+	}
+}
+
+/* Media query for large desktops (1440px and above) */
+@media (min-width: 1440px) {
+	.detailedmovie {
+		grid-template-columns: 25% 25%; /* Adjust column widths for larger screens */
+		gap: 60px; /* Even larger gap for extra-large screens */
+	}
+}

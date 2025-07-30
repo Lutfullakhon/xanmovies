@@ -1,0 +1,86 @@
+.rowmovies {
+	margin-top: 50px;
+
+	&__top {
+		display: grid;
+		grid-template-columns: auto 1fr auto;
+		align-items: center;
+		gap: 20px;
+
+		&-title {
+			display: flex;
+			gap: 5px;
+			align-items: center;
+
+			img {
+				width: 40px;
+			}
+		}
+
+		.hr {
+			width: 100%;
+			height: 2px;
+			background-color: rgba(80, 74, 121, 0.5);
+		}
+
+		a {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&__lists {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		gap: 20px;
+		margin-top: 20px;
+	}
+
+	&__loadmore {
+		display: flex;
+		justify-content: center;
+		margin-top: 50px;
+	}
+
+	@media (max-width: 1200px) {
+		&__lists {
+			grid-template-columns: repeat(4, 1fr); // 4 columns for medium screens
+		}
+	}
+
+	@media (max-width: 992px) {
+		&__lists {
+			grid-template-columns: repeat(3, 1fr); // 3 columns for tablets
+		}
+	}
+
+	@media (max-width: 768px) {
+		&__lists {
+			grid-template-columns: repeat(2, 1fr); // 2 columns for small tablets
+		}
+	}
+
+	@media (max-width: 576px) {
+		&__lists {
+			grid-template-columns: repeat(1, 1fr); // 1 column for mobile devices
+		}
+
+		&__top {
+			grid-template-columns: 1fr; // Stack top elements vertically on small screens
+			gap: 10px;
+
+			&-title {
+				justify-content: center; // Center title on small screens
+			}
+
+			.hr {
+				display: none; // Hide horizontal line on small screens
+			}
+
+			a {
+				text-align: center; // Center link on small screens
+			}
+		}
+	}
+}
